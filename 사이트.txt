@@ -1,0 +1,7 @@
+https://ko.javascript.info/
+https://developer.mozilla.org/ko/
+
+https://michalsnik.github.io/aos/
+https://kenwheeler.github.io/slick/
+
+라이브러리(jquery, asap, react) 프레임워크(작업환경-node js, vuejs, angular) 플러그인
