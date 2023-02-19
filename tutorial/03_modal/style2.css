@@ -19,7 +19,7 @@ a {
 }
 
 .content .active {
-  filter: blur(15px);
+  filter: blur(20px);
 }
 
 .content h2 {
