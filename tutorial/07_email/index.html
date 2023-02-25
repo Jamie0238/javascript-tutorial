@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -12,40 +16,53 @@
       <div class="left">
         <h1>logo</h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum eum
-          voluptate aliquam magni excepturi fugit.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
+          assumenda esse nihil hic repellat nulla!
         </p>
-        <span>dmswlsla9745@gmail.com</span>
+        <span>yarnserver@gmail.com</span>
       </div>
 
       <div class="right">
         <div class="inner">
-          <h2>Send mail</h2>
+          <h2>메일 보내기</h2>
           <form id="contact-form">
             <input type="hidden" name="contact_number" />
-            <input type="hidden" name="subject" value="Hello" />
-            <label>Name</label>
-            <input type="text" name="name" />
-
-            <label>E-mail</label>
-            <input type="email" name="email" />
-
-            <label>Message</label>
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
-            <button type="submit">Send</button>
+            <input type="hidden" name="subject" value="안녕하세요!!!" />
+            <label>이름</label>
+            <input type="text" id="userName" placeholder="이름" name="name" />
+            <label>이메일</label>
+            <input type="email" id="email" placeholder="이메일" name="email" />
+            <label>내용</label>
+            <textarea
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="내용"
+              name="message"
+            ></textarea>
+            <button type="submit">보내기</button>
           </form>
         </div>
       </div>
     </div>
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
+    <div class="dimm">
+      <i class="xi-spinner-5 xi-spin xi-3x"></i>
+    </div>
+
+    <div class="modal">
+      <span>✨</span>
+      <p>
+        메일이 성공적으로<br />
+        발송되었습니다.
+      </p>
+      <button class="close_btn">닫기</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
       ;(function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init('eZQdXyn04GpuH39io')
+        emailjs.init('8ksWmS4ek6VBrnWtj')
       })()
     </script>
 

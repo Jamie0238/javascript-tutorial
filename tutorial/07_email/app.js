@@ -1,22 +1,43 @@
 // emailjs.send("service_8o380j8","template_uxqacw9");
 
 const form = document.querySelector('#contact-form')
+const dimm = document.querySelector('.dimm')
+const modal = document.querySelector('.modal')
+const closeBtn = document.querySelector('.close_Btn')
+const inputs = document.querySelectorAll('input')
+const userName = document.querySelectorAll('#userName')
+const email = document.querySelectorAll('#email')
+const message = document.querySelector('#message')
 
-function senEmail() {
+function sendEmail() {
   form.addEventListener('submit', function (event) {
     event.preventDefault()
-    // generate a five digit number for the contact_number variable
+
+    if (userName.value == '' || email.value == '' || message.value == '') {
+      alert('이름, 이메일, 내용을 확인하세요')
+      return
+    }
+
     this.contact_number.value = (Math.random() * 100000) | 0
-    // these IDs from the previous steps
+    dimm.classList.add('active')
+
     emailjs.sendForm('service_8o380j8', 'template_uxqacw9', this).then(
       function () {
-        console.log('SUCCESS!')
+        modal.classList.add('active')
       },
       function (error) {
         console.log('FAILED...', error)
       }
     )
   })
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active')
+    dimm.classList.remove('active')
+
+    inputs.forEach((item) => (item.value = ''))
+    message.value = ''
+  })
 }
 
-senEmail()
+sendEmail()

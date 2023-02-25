@@ -73,3 +73,60 @@ form textarea {
 button {
   padding: 10px 16px;
 }
+
+.dimm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.dimm.active {
+  display: block;
+}
+
+.dimm i {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.modal span {
+  font-size: 40px;
+}
+
+.modal p {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.modal .close_btn {
+  padding: 4px 8px;
+}
